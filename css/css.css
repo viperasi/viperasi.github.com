@@ -1,0 +1,140 @@
+/*内嵌字体，不兼容IE*/
+@font-face{
+	font-family: "DejaVu Sans Mono";
+	src: url(/_touch/DejaVuSansMono.ttf) format("truetype");
+}
+
+*{
+	background-color: #000000;
+	color:green;
+	font-family: "DejaVu Sans Mono", Verdana, helvetica, sans-serif;
+}
+
+body{
+	height:800px;
+	overflow: hidden;
+}
+
+body,div,p,ul,li{
+	margin:0;
+	padding:0;
+}
+
+input,button,select,textarea{
+	outline: none;
+}
+
+a,a:link,a:hover,a:active,a:visited{
+	text-decoration: none;
+	outline: none;
+	display: block;
+}
+
+#menubar{
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	z-index: 100;
+	width:99%;
+}
+
+#menubar ul{
+	list-style: none;
+	height: 20px;
+}
+
+#menubar ul li{
+	display: block;
+	position: relative;
+	float: left;
+	line-height: 20px;
+	margin-left: 10px;
+}
+
+#menubar ul li a{
+	display: block;
+	text-decoration: none;
+	color: #008000;
+	background-color: #000000;
+	white-space: nowrap;
+}
+
+#menubar ul li a:hover,#menubar ul li:hover a{
+	-moz-box-shadow: 1px 1px 5px #D5D5D5;
+	-webkit-box-shadow: 1px 1px 5px #D5D5D5;
+	box-shadow: 1px 1px 5px #D5D5D5;
+	background-color: #008000;
+	color: #FFFFFF;
+	font-weight: bold;
+	text-shadow: 1px 1px 5px black;
+}
+
+#menubar ul li:hover a span{
+	background-color: #008000;
+	color: #FFFFFF;
+	text-shadow: 1px 1px 5px black;
+	display: block;
+	float: right;
+	position: relative;
+	font-weight: normal;
+	margin-left: 10px;
+}
+
+#menubar ul li ul{
+	display: none;
+}
+
+#menubar ul li:hover ul{
+	display: block;
+	position: absolute;
+	margin-left: -10px;
+}
+
+#menubar ul li:hover li{
+	float:none;
+}
+
+#menubar ul li:hover li a:hover{
+	-moz-box-shadow: 1px 1px 5px #D5D5D5;
+	-webkit-box-shadow: 1px 1px 5px #D5D5D5;
+	box-shadow: 1px 1px 5px #D5D5D5;
+	background-color: #77AA55;
+	color: #FFFFFF;
+	font-weight: bold;
+	text-shadow: 1px 1px 5px black;
+}
+
+#menubar ul li:hover li a:hover span{
+	background-color: #77AA55;
+	color: #FFFFFF;
+	font-weight: normal;
+}
+
+.menu:first-letter{
+	text-decoration: underline;
+}
+
+#main{
+	width:98%;
+	height:auto;
+	position: absolute;
+	overflow: auto;
+	left:20px;
+	top: 20px;
+	bottom: 20px;
+}
+
+#inputbar{
+	margin-left: 10px;
+	position: absolute;
+	bottom: 0px;
+	height:20px;
+}
+
+#txtInput{
+	border: none;
+}
+
+.inputcursor{
+	background-color: #008000;
+}

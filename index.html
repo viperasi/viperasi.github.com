@@ -1,20 +1,113 @@
-<!DOCTYPE>
+<!DOCTYPE >
 <html>
 	<head>
 		<title>~@viperasi</title>
-		<script src="/js/jquery-1.7.1.min.js" type="text/javascript"></script>
-		<script src="/js/jquery-ui-1.8.16.custom.min.js" type="text/javascript"></script>
+		<meta charset="UTF-8" />
+		<link href="css/css.css" rel="stylesheet" type="text/css" />
+		<script src="js/jquery-1.7.1.min.js" type="text/javascript"></script>
+		<script src="js/jquery-ui-1.8.16.custom.min.js" type="text/javascript"></script>
 		<script>
+			var showInterval; 
 			$(function(){
-				$("#test").empty().append(
-					$("<a>").attr("href","http://viperasi.github.com")
-						.append("Home")
-				);
-			});	
+				$(document).keypress(function(e){
+					var inputbarText = $("#inputbar").html();
+					var inputText = String.fromCharCode(e.which);
+					if(inputbarText.indexOf("<span")!=-1){
+						inputbarText = inputbarText.substring(0,inputbarText.indexOf("<span"));
+						$("#inputbar span").before(inputText);
+					}else{
+						$("#inputbar").append(inputText);	
+					}
+				});
+				showInterval = setInterval("showInputCursor()",500);
+			});
+			
+			function showInputCursor(){
+				$("#inputbar").append("<span class='inputcursor'>&nbsp;</span>");
+				clearInterval(showInterval);
+				setTimeout(hideInputCursor,500);
+			}
+			
+			function hideInputCursor(){
+				$("#inputbar span").remove();
+				showInterval = setInterval("showInputCursor()",1000);
+			}
 		</script>
 	</head>
 	<body>
-		<span id="test">gpp.github.com</span>
-		g++ page:<a href="g++ page:https://plus.google.com/115801253107650762396">Click This!</a>
+		<div id="menubar">
+			<ul>
+				<li><a href="#" class="menu">Home</a></li>
+				<li><a href="#" class="menu">Project</a>
+					<ul>
+						<li><a href="#" class="menu">g++<span class="shortkey">Ctrl+G</span></a></li>
+						<li><a href="#" class="menu">OnlyMe<span class="shortkey">Ctrl+O</span></a></li>
+						<li><a href="#" class="menu">GeekMail<span class="shortkey">Ctrl+M</span></a></li>
+					</ul>
+				</li>
+				<li><a href="#" class="menu">Help</a>
+					<ul>
+						<li><a href="#" class="menu">About</a></li>
+						<li><a href="#" class="menu">Help<span class="shortkey">F1</span></a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div id="main">
+			<pre>これ以上何を失えば 心は許されるの
+どれ程の痛みならば もういちど君に会える
+One more time 季節よ うつろわないで
+One more time ふざけあった 時間よ
+
+くいちがう時はいつも 僕が先に折れたね
+わがままな性格が なおさら愛しくさせた
+One more chance 記憶に足を取られて
+One more chance 次の場所を選べない
+
+いつでも捜しているよ どっかに君の姿を
+向いのホーム 路地裏の窓
+こんなとこにいるはずもないのに
+願いがもしも叶うなら 今すぐ君のもとへ
+できないことは もうなにもない
+すべてかけて抱きしめてみせるよ
+
+寂しさ紛らすだけなら
+誰でもいいはずなのに
+星が落ちそうな夜だから
+自分をいつわれない
+One more time 季節よ うつろわないで
+One more time ふざけあった時間よ
+
+いつでも捜しているよ どっかに君の姿を
+交差点でも 夢の中でも
+こんなとこにいるはずもないのに
+奇跡がもしも起こるなら 今すぐ君に見せたい
+新しい朝 これからの僕
+言えなかった「好き」という言葉も
+
+夏の想い出がまわる ふいに消えた鼓動
+
+いつでも捜しているよ どっかに君の姿を
+明け方の街 桜木町で
+こんなとこに来るはずもないのに
+願いがもしも叶うなら 今すぐ君のもとへ
+できないことはもう何もない
+すべてかけて抱きしめてみせるよ
+
+いつでも捜しているよ
+どっかに君の破片を
+旅先の店 新聞の隅
+こんなとこにあるはずもないのに
+奇跡がもしも起こるなら 今すぐ君に見せたい
+新しい朝 これからの僕
+言えなかった「好き」という言葉も
+
+いつでも捜してしまう どっかに君の笑顔を
+急行待ちの 踏切あたり
+こんなとこにいるはずもないのに
+命が繰り返すならば 何度も君のもとへ
+欲しいものなど もう何もない
+君のほかに大切なものなど</pre></div>
+		<div id="inputbar">viperasi.github.com $</div>
 	</body>
 </html>
