@@ -119,9 +119,12 @@ a,a:link,a:hover,a:active,a:visited{
 	height:auto;
 	position: absolute;
 	overflow: auto;
+	overflow-x: hidden;
 	left:20px;
 	top: 20px;
 	bottom: 20px;
+	white-space: normal;
+	word-break: break-all;
 }
 
 #inputbar{
